@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&display=swap');
+
+:root {
+    --clr-primary-500: hsl(158,36%,37%);
+    --clr-primary-100: hsl(30,38%,92%);
+
+    --clr-neutral-900: hsl(212,21%,14%);
+    --clr-neutral-400: hsl(228,12%,48%);
+    --clr-neutral-100: hsl(0,0%,100%);
+
+    --ff-primary: 'Montserrat', sans-serif;
+    --ff-secondary: 'Fraunces', serif;
+
+    --fw-bold: 700;
+    --fw-semi-bold: 500;
+
+    --fs-regular: 1rem;
+    
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--clr-primary-100);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+.card {
+    max-width: 22rem;
+    height: 80%;
+    background-color: var(--clr-neutral-100);
+    border-radius: .65rem;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+
+.image > img {
+    width: 100%;
+}
+
+.details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+
+.details > .category {
+    letter-spacing: .25rem;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-semi-bold);
+    font-size: .8rem;
+    color: var(--clr-neutral-400)
+}
+.details > .title {
+    font-family: var(--ff-secondary);
+    line-height: 2rem;
+    color: var(--clr-neutral-900);
+}
+
+.details > .description {
+    font-family: var(--ff-primary);
+    color: var(--clr-neutral-400);
+    line-height: 1.7rem;
+}
+
+.details > .price {
+    color: var(--clr-primary-500);
+    font-family: var(--ff-secondary);
+    font-size: 2rem;
+    position: relative;
+}
+
+.details > .price::after {
+    content: '$169.99';
+    text-decoration: line-through;
+    font-size: 14px;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-semi-bold);
+    color: var(--clr-neutral-400);
+    position: absolute;
+    top: 30%;
+    left: 45%;
+
+}
+
+.details > .button {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: var(--clr-primary-500);
+    border-radius: .65rem;
+    position: relative;
+}
+
+.details > .button:hover {
+    background-color: rgb(24, 50, 40);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    cursor: pointer;
+}
+
+.button > .button-text {
+    color: var(--clr-neutral-100);
+    text-decoration: none;
+    font-family: var(--ff-primary);
+    margin-left: 1rem;
+}
+
+
+.button  > .button-icon {
+    position: absolute;
+    top: 35%;
+    left: 30%;
+}
+
+@media only screen and (min-width: 90rem) {
+    
+    .card {
+        max-width: 37.5rem;
+        height: 28.125rem;
+        display: flex;
+    }
+    .image {
+        width: 100%;
+    }
+
+    .image > img {
+        height: 100%;
+        width: calc(37.5rem /2);
+        content: url('../../images/image-product-desktop.jpg');
+
+    }
+
+    .details {
+        padding: 1.9rem;
+        gap: 1.4rem
+    }
+
+    .details > .description {
+        font-size: .875rem;
+        line-height: 1.5rem;
+    }
+
+    .details > .price::after {
+        left: 60%;
+    }
+
+    .button  > .button-icon {
+        left: 24%;
+    }
+
+}
+
